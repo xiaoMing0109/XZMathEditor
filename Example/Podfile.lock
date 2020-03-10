@@ -1,0 +1,23 @@
+PODS:
+  - iosMath (0.9.4)
+  - XZMathEditor (1.0.0):
+    - iosMath (~> 0.9.3)
+
+DEPENDENCIES:
+  - XZMathEditor (from `../`)
+
+SPEC REPOS:
+  trunk:
+    - iosMath
+
+EXTERNAL SOURCES:
+  XZMathEditor:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  iosMath: f7a6cbadf9d836d2149c2a84c435b1effc244cba
+  XZMathEditor: 241b3ad4bca175a524b3b223b7ee0f4e9caba8d9
+
+PODFILE CHECKSUM: ed5c48e814d23c4f10a254c2b7c723657d660df2
+
+COCOAPODS: 1.8.4

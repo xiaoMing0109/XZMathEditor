@@ -11,18 +11,22 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 
 ## Requirements
 
+> s.frameworks = 'UIKit'
+> 
+> s.dependency 'iosMath', '~> 0.9.3'
+
 ## Installation
 
 XZMathEditor is available through [CocoaPods](https://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod 'XZMathEditor'
+pod 'XZMathEditor', '~> 1.0.0'
 ```
 
 ## Author
 
-xiaoMing0109, liuming_0109@163.com
+HotIcecream, liuming_0109@163.com
 
 ## License
 
