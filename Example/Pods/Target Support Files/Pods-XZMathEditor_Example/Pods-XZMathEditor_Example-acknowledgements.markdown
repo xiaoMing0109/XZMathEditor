@@ -3,7 +3,7 @@ This application makes use of the following third party libraries:
 
 ## XZMathEditor
 
-Copyright (c) 2020 xiaoMing0109 <liuming_0109@163.com>
+Copyright (c) 2020 HotIcecream <liuming_0109@163.com>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
