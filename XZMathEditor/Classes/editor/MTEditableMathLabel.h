@@ -27,6 +27,9 @@
 - (void) didBeginEditing:(MTEditableMathLabel*) label;
 - (void) didEndEditing:(MTEditableMathLabel*) label;
 
+/// 触发  `\n` 且公式未输入完整时，返回错误
+- (void)returnIncompleteInputError;
+
 @end
 
 /** This protocol provides information on the context of the current insertion point. 

@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'XZMathEditor'
-  s.version          = '1.0.1'
+  s.version          = '1.0.2'
   s.summary          = 'MathEditor.'
   s.description      = <<-DESC
 TODO: Add long description of the pod here.

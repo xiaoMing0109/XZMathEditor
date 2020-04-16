@@ -28,7 +28,11 @@
 
 - (void)testExample
 {
-    XCTFail(@"No implementation for \"%s\"", __PRETTY_FUNCTION__);
+    NSString *string = @"{}kxkf^{}x";
+    if ([string containsString:@"{}"]) {
+        string = [string stringByReplacingOccurrencesOfString:@"{}" withString:@""];
+    }
+    NSLog(@"string:%@", string);
 }
 
 @end

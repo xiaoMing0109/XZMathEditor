@@ -403,7 +403,11 @@
 
 #pragma mark - latex
 - (NSString *)latex {
-    return self.label.latex;
+    NSString *latex = self.label.latex;
+    if ([latex containsString:@"{}"]) {
+        latex = [latex stringByReplacingOccurrencesOfString:@"{}" withString:@""];
+    }
+    return latex;
 }
 
 #pragma mark - UIKeyInput
@@ -677,6 +681,12 @@ static const unichar kMTUnicodeGreekCapitalEnd = 0x03A9;
 - (void) insertText:(NSString*) str
 {
     if ([str isEqualToString:@"\n"]) {
+        if ([self.latex containsString:MTSymbolWhiteSquare] || [self.latex containsString:MTSymbolBlackSquare]) {
+            if ([self.delegate respondsToSelector:@selector(returnIncompleteInputError)]) {
+                [self.delegate returnIncompleteInputError];
+            }
+            return;
+        }
         if ([self.delegate respondsToSelector:@selector(returnPressed:)]) {
             [self.delegate returnPressed:self];
         }
