@@ -1,8 +1,7 @@
-FRAMEWORK_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/XZMathEditor" "${PODS_CONFIGURATION_BUILD_DIR}/iosMath"
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
-HEADER_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/XZMathEditor/XZMathEditor.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/iosMath/iosMath.framework/Headers"
-LD_RUNPATH_SEARCH_PATHS = $(inherited) '@executable_path/Frameworks' '@loader_path/Frameworks'
-OTHER_LDFLAGS = $(inherited) -framework "CoreGraphics" -framework "CoreText" -framework "QuartzCore" -framework "UIKit" -framework "XZMathEditor" -framework "iosMath"
+HEADER_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/XZMathEditor" "${PODS_ROOT}/Headers/Public/iosMath"
+LIBRARY_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/XZMathEditor" "${PODS_CONFIGURATION_BUILD_DIR}/iosMath"
+OTHER_LDFLAGS = $(inherited) -ObjC -l"XZMathEditor" -l"iosMath" -framework "CoreGraphics" -framework "CoreText" -framework "QuartzCore" -framework "UIKit"
 PODS_BUILD_DIR = ${BUILD_DIR}
 PODS_CONFIGURATION_BUILD_DIR = ${PODS_BUILD_DIR}/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)
 PODS_PODFILE_DIR_PATH = ${SRCROOT}/.
