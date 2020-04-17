@@ -681,7 +681,7 @@ static const unichar kMTUnicodeGreekCapitalEnd = 0x03A9;
 - (void) insertText:(NSString*) str
 {
     if ([str isEqualToString:@"\n"]) {
-        if ([self.latex containsString:MTSymbolWhiteSquare] || [self.latex containsString:MTSymbolBlackSquare]) {
+        if ([self.latex containsString:@"\\square"] || [self.latex containsString:MTSymbolBlackSquare]) {
             if ([self.delegate respondsToSelector:@selector(returnIncompleteInputError)]) {
                 [self.delegate returnIncompleteInputError];
             }
