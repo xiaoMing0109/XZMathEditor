@@ -611,7 +611,8 @@ static const unichar kMTUnicodeGreekCapitalEnd = 0x03A9;
     if ([current hasSubIndexOfType:kMTSubIndexTypeDegree] || [current hasSubIndexOfType:kMTSubIndexTypeRadicand]) {
         rad = self.mathList.atoms[current.atomIndex];
         if (withDegreeButtonPressed) {
-            if (!rad.degree) {
+            /// - Note: Fix rad type is MTFraction prevent crash.
+            if ([rad isKindOfClass:[MTRadical class]] && !rad.degree) {
                 rad.degree = [MTMathList new];
                 [rad.degree addAtom:[MTMathAtomFactory placeholder]];
                 _insertionIndex = [[current levelDown] levelUpWithSubIndex:[MTMathListIndex level0Index:0] type:kMTSubIndexTypeDegree];
@@ -638,15 +639,24 @@ static const unichar kMTUnicodeGreekCapitalEnd = 0x03A9;
         if (withDegreeButtonPressed) {
             rad = [MTMathAtomFactory placeholderRadical];
 
-            [self.mathList insertAtom:rad atListIndex:current];
+            /// - Note: Remove excess MTSymbolWhiteSquare.
+            if (![self updatePlaceholderIfPresent:rad]) {
+                // If the placeholder hasn't been updated then insert it.
+                [self.mathList insertAtom:rad atListIndex:current];
+            }
+            
             _insertionIndex = [current levelUpWithSubIndex:[MTMathListIndex level0Index:0] type:kMTSubIndexTypeDegree];
         } else {
             rad = [MTMathAtomFactory placeholderSquareRoot];
 
-            [self.mathList insertAtom:rad atListIndex:current];
+            /// - Note: Fix crash.
+            if (![self updatePlaceholderIfPresent:rad]) {
+                // If the placeholder hasn't been updated then insert it.
+                [self.mathList insertAtom:rad atListIndex:current];
+            }
+            
             _insertionIndex = [current levelUpWithSubIndex:[MTMathListIndex level0Index:0] type:kMTSubIndexTypeRadicand];
         }
-
     }
 }
 

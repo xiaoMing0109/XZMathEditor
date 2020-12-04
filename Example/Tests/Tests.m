@@ -28,11 +28,7 @@
 
 - (void)testExample
 {
-    NSString *string = @"{}kxkf^{}x";
-    if ([string containsString:@"{}"]) {
-        string = [string stringByReplacingOccurrencesOfString:@"{}" withString:@""];
-    }
-    NSLog(@"string:%@", string);
+    
 }
 
 @end

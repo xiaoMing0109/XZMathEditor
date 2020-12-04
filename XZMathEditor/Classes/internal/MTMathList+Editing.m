@@ -45,7 +45,7 @@
             MTRadical *radical = [self.atoms objectAtIndex:index.atomIndex];
             if (!radical || radical.type != kMTMathAtomRadical) {
                 // Not radical, quit
-                NSAssert(false, @"No radical found at index %lu", (unsigned long)index.atomIndex);
+                /// - Note: Annotate the code to prevent crash.
                 return;
             }
             if (index.subIndexType == kMTSubIndexTypeDegree) {

@@ -21,7 +21,7 @@ XZMathEditor is available through [CocoaPods](https://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod 'XZMathEditor', '~> 1.0.1'
+pod 'XZMathEditor', '~> 1.0.4'
 ```
 
 ## Author

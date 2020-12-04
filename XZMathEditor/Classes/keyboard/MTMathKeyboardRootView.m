@@ -130,7 +130,7 @@ static NSInteger const DEFAULT_KEYBOARD = 0;
     _currentKeyboard.alpha = 1.0;
     [UIView animateWithDuration:0.1 animations:^{
         newKeyboard.alpha = 1.0;
-        _currentKeyboard.alpha = 0.5;
+        self->_currentKeyboard.alpha = 0.5;
     }];
 
     [_contentView bringSubviewToFront:newKeyboard];
@@ -199,9 +199,9 @@ static NSInteger const DEFAULT_KEYBOARD = 0;
 - (void)setSquareRootHighlighted:(BOOL)squareRootHighlighted
 {
     _squareRootHighlighted = squareRootHighlighted;
-        for (MTKeyboard *keyboard in _keyboards) {
-    [keyboard setSquareRootState:squareRootHighlighted];
-        }
+    for (MTKeyboard *keyboard in _keyboards) {
+        [keyboard setSquareRootState:squareRootHighlighted];
+    }
 }
 
 - (void)setRadicalHighlighted:(BOOL)radicalHighlighted
