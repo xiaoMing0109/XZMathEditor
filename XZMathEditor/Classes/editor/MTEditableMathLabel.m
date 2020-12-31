@@ -303,6 +303,24 @@
     [self insertionPointChanged];
 }
 
+- (void)setLatex:(NSString *)latex {
+    NSError *error = NULL;
+    MTMathList *mathList = [MTMathListBuilder buildFromString:latex ?: @"" error:&error];
+    if (error) {
+        self.mathList = [MTMathList new];
+    } else {
+        self.mathList = mathList;
+    }
+}
+
+- (NSString *)latex {
+    NSString *latex = self.label.latex;
+    if ([latex containsString:@"{}"]) {
+        latex = [latex stringByReplacingOccurrencesOfString:@"{}" withString:@""];
+    }
+    return latex;
+}
+
 // Helper method to update caretView when insertion point/selection changes.
 - (void) insertionPointChanged
 {
@@ -399,15 +417,6 @@
 - (void) enableTap:(BOOL) enabled
 {
     self.tapGestureRecognizer.enabled = enabled;
-}
-
-#pragma mark - latex
-- (NSString *)latex {
-    NSString *latex = self.label.latex;
-    if ([latex containsString:@"{}"]) {
-        latex = [latex stringByReplacingOccurrencesOfString:@"{}" withString:@""];
-    }
-    return latex;
 }
 
 #pragma mark - UIKeyInput

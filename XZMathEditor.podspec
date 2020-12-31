@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'XZMathEditor'
-  s.version          = '1.0.4'
+  s.version          = '1.0.5'
   s.summary          = 'MathEditor.'
   s.description      = <<-DESC
 TODO: Add long description of the pod here.

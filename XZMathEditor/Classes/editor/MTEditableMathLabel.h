@@ -69,7 +69,7 @@
 
 @property (nonatomic) MTMathList* mathList;
 @property (nonatomic) UIColor* highlightColor;
-@property (nonatomic, readonly, nullable) NSString *latex;
+@property (nonatomic, nullable) NSString *latex;
 
 @property (nonatomic) UIImageView* cancelImage;
 @property (nonatomic, weak) id<MTEditableMathLabelDelegate> delegate;

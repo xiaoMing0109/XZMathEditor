@@ -31,6 +31,13 @@
     [self.mathLabel enableTap:YES];
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    // test latex input
+    self.placeholderLabel.hidden = YES;
+    self.mathLabel.latex = @"\\frac{2}{x}<2y";
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
